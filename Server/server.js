@@ -1,11 +1,13 @@
 let express = require('express');
 let server = express();
+let cors = require('cors');
 const { getMovieTitles, addMovie, updateMovie } = require('./controllers.js');
 const { deleteMovie } = require('./controllers.js');
 
 let port = 3000;
 
 server.use(express.json());
+server.use(cors());
 
 server.get('/', (req, res) => {
     res.send('This server is up and running!')

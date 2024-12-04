@@ -1,7 +1,7 @@
 const knex = require("knex")(require("./knexfile.js")["development"]);
 
 async function getMovieTitles() {
-    const movieTitles = await knex('movie_table').select('title')
+    const movieTitles = await knex('movie_table').select('*')
     return movieTitles;
 }
 
